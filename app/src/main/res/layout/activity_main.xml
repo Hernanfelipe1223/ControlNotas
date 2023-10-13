@@ -4,231 +4,282 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="-1dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <TextView
         android:id="@+id/tvResultado2"
         android:layout_width="328dp"
         android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
         android:text="PROMEDIO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintTop_toBottomOf="@+id/b1"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvResultado"
         android:layout_width="328dp"
         android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvPerdieron2"
         android:layout_width="328dp"
         android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         android:text="ESTUDIANTES QUE VAN PERDIENDO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvPerdieron"
         android:layout_width="328dp"
         android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPerdieron2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="Ingrese la tercera nota entre 0 y 5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et5"
         android:layout_width="74dp"
         android:layout_height="42dp"
         android:layout_marginStart="308dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/et4" />
 
     <EditText
         android:id="@+id/et2"
         android:layout_width="74dp"
         android:layout_height="42dp"
         android:layout_marginStart="308dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et3"
         android:layout_width="74dp"
         android:layout_height="42dp"
         android:layout_marginStart="308dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="29dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/et2" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="223dp"
         android:layout_height="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="Ingrese la cuarta nota entre 0 y 5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingrese el numero de estudiantes"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="¿Usted es?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="Ingrese la primera nota entre 0 y 5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="Ingrese la segunda nota entre 0 y 5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="236dp"
         android:text="NOTAS ESTUDIANTES"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et4"
         android:layout_width="74dp"
         android:layout_height="42dp"
         android:layout_marginStart="308dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="29dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toBottomOf="@+id/et3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
         android:onClick="calcularNota"
         android:text="Calcular Nota"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cb1"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/cb1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="332dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toBottomOf="@+id/et5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="356dp"
-        android:text="deseas guardar la nota"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="120dp"
+        android:text="¿Reestablecer todos los valores?"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <RadioButton
-        android:id="@+id/rbY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="288dp"
-        android:layout_marginTop="656dp"
-        android:onClick="cerrarAplicacion"
-        android:text="Salir"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="209dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <RadioButton
-        android:id="@+id/rbN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:onClick="limpiarCampos"
-        android:text="Reiniciar y Limpiar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        <RadioButton
+            android:id="@+id/radioButtonAlumno"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:text="Alumno"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/calculate"
+            app:layout_constraintEnd_toStartOf="@+id/radioButtonProfesor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <RadioButton
+            android:id="@+id/radioButtonProfesor"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Profesor"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radioButtonAlumno"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

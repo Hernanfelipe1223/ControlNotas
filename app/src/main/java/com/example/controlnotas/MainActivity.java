@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button b1;
     TextView tvPerdieron,tvResultado,tvNumEstudiantes;
     CheckBox cb1;
-    RadioButton rbN,rbY;
+    RadioButton rbAlumno,rbProfesor;
     private int contadorEstudiantesPerdieron = 0;
     double notaDefinitiva = 0;
     private static final String SHARED_PREF_NAME = "MiSharedPreferences";
@@ -38,28 +38,29 @@ public class MainActivity extends AppCompatActivity {
         et4 = findViewById(R.id.et4);
         et5 = findViewById(R.id.et5);
         b1 = findViewById(R.id.b1);
-        tvPerdieron = findViewById(R.id.tvPerdieron2);
+        tvPerdieron = findViewById(R.id.tvPerdieron);
         tvResultado = findViewById(R.id.tvResultado);
         cb1 = findViewById(R.id.cb1);
-        rbN = findViewById(R.id.rbN);
-        rbY = findViewById(R.id.rbY);
+        rbAlumno = findViewById(R.id.radioButtonAlumno);
+        rbProfesor = findViewById(R.id.radioButtonProfesor);
+
+        SharedPreferences preferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+
+        et2.setText(preferences.getString("text2", ""));
+        et3.setText(preferences.getString("text3", ""));
+        et4.setText(preferences.getString("text4", ""));
+        et5.setText(preferences.getString("text5", ""));
+        tvPerdieron.setText(preferences.getString("tvPerdieron", ""));
+        tvResultado.setText(preferences.getString("tvResultado", ""));
 
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (rbN.isChecked()) {
-                    limpiarCampos();
-                } else if (rbY.isChecked()) {
-                    cerrarAplicacion();
-                } else {
-                    calcularNota();
-                }
-
+                calcularNota();
             }
         });
     }
 
     private void calcularNota() {
-
             String nota1Text = et2.getText().toString();
             String nota2Text = et3.getText().toString();
             String nota3Text = et4.getText().toString();
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                  double nota3 = Double.parseDouble(nota3Text);
                  double nota4 = Double.parseDouble(nota4Text);
 
-                 if (cb1.isChecked()) {
+                 if (rbProfesor.isChecked()) {
                      notaDefinitiva = (nota1 * 0.20 + nota2 * 0.30 + nota3 * 0.15 + nota4 * 0.35);
                      tvResultado.setText("Nota Final: " + notaDefinitiva);
                      if (nota1 < 0 || nota1 > 5 || nota2 < 0 || nota2 > 5 || nota3 < 0 || nota3 > 5 || nota4 < 0 || nota4 > 5) {
@@ -86,39 +87,52 @@ public class MainActivity extends AppCompatActivity {
                      tvResultado.setText("Nota Definitiva: " + notaDefinitiva);
                      if (notaDefinitiva < 3.0) {
                          estudiantesPerdieron++;
-                         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                         editor.putInt(TV_PERDIERON_KEY, estudiantesPerdieron);
-                         editor.apply();
                          tvPerdieron.setText("Estudiantes que perdieron: " + estudiantesPerdieron);
+                         guardar();
                          limpiarCampos();
                      } else {
+                         guardar();
                          limpiarCampos();
                      }
-                 } else {
+                 }
+                 else {
                      notaDefinitiva = (nota1 * 0.20) + (nota2 * 0.30) + (nota3 * 0.15) + (nota4 * 0.35);
-                     Toast.makeText(this, "debe selecionar el check de guardar la nota, solo se mostrar el promedi", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(this, "Selecciono alumno, solo se mostrara el promedio del alumno", Toast.LENGTH_SHORT).show();
+                     tvResultado.setText("Nota Definitiva: " + notaDefinitiva);
+                     guardar();
                      limpiarCampos();
                  }
-             }else{
+             }
+             else {
                      Toast.makeText(this, "ingrese valores numericos  ", Toast.LENGTH_SHORT).show();
                      limpiarCampos();
-                 }
-}
+             }
+             if(cb1.isChecked()){
+                 limpiarCampos();
+                 tvResultado.setText("");
+                 tvPerdieron.setText("");
+                 cb1.setChecked(false);
+                 guardar();
+             }
+    }
+
+    private void guardar() {
+        SharedPreferences preferencias = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferencias.edit();
+        obj_editor.putString("text2", et2.getText().toString());
+        obj_editor.putString("text3", et3.getText().toString());
+        obj_editor.putString("text4", et4.getText().toString());
+        obj_editor.putString("text5", et5.getText().toString());
+        obj_editor.putString("tvPerdieron", tvPerdieron.getText().toString());
+        obj_editor.putString("tvResultado", tvResultado.getText().toString());
+        obj_editor.commit();
+        Toast.makeText(this, "Se Ha guardado los cambios", Toast.LENGTH_LONG).show();
+    }
     private void limpiarCampos() {
         et2.setText("");
         et3.setText("");
         et4.setText("");
         et5.setText("");
-    }
-
-
-
-    private void cerrarAplicacion() {
-        finish();
-        moveTaskToBack(true);
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(1);
     }
 
     private boolean esNumero(String texto) {
